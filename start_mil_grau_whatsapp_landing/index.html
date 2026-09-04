@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0d" />
+  <meta name="description" content="Agende sua lavagem e detalhamento automotivo na Start Mil Grau pelo WhatsApp." />
+  <title>Start Mil Grau | Agendamento pelo WhatsApp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header" id="topo">
+    <div class="container nav-wrap">
+      <a href="#topo" class="brand" aria-label="Start Mil Grau">
+        <img src="assets/logo.png" alt="Start Mil Grau" class="brand-logo" />
+      </a>
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#servicos">Serviços</a>
+        <a href="#planos">Planos</a>
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#faq">Dúvidas</a>
+      </nav>
+      <a class="btn btn-outline desktop-cta" href="#agendar">Agendar agora</a>
+      <button class="menu-button" id="menuButton" aria-label="Abrir menu" aria-expanded="false">☰</button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#servicos">Serviços</a>
+      <a href="#planos">Planos</a>
+      <a href="#como-funciona">Como funciona</a>
+      <a href="#faq">Dúvidas</a>
+      <a href="#agendar" class="btn btn-primary">Agendar agora</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">ESTÉTICA AUTOMOTIVA • START MIL GRAU</span>
+          <h1>Seu carro limpo, protegido e pronto para rodar.</h1>
+          <p class="hero-text">Escolha o serviço, data e horário. No final, você é levado ao WhatsApp com a mensagem pronta para confirmar o atendimento.</p>
+          <div class="hero-actions">
+            <a href="#agendar" class="btn btn-primary btn-lg">Agendar pelo WhatsApp</a>
+            <a href="#servicos" class="btn btn-ghost btn-lg">Ver serviços</a>
+          </div>
+          <div class="trust-row">
+            <div><strong>Atendimento rápido</strong><span>Agendamento em poucos passos</span></div>
+            <div><strong>Serviço sob medida</strong><span>Do básico ao detalhamento completo</span></div>
+            <div><strong>WhatsApp direto</strong><span>Sem cadastro obrigatório</span></div>
+          </div>
+        </div>
+        <div class="hero-panel reveal delay-1">
+          <div class="panel-glow"></div>
+          <div class="hero-card">
+            <div class="hero-card-badge">Agenda inteligente</div>
+            <h3>Reserve em menos de 1 minuto</h3>
+            <ol>
+              <li><span>1</span>Escolha seu serviço</li>
+              <li><span>2</span>Selecione data e horário</li>
+              <li><span>3</span>Informe veículo e contato</li>
+              <li><span>4</span>Confirme no WhatsApp</li>
+            </ol>
+            <a href="#agendar" class="btn btn-primary btn-block">Começar agendamento</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">SERVIÇOS</span>
+          <h2>Do essencial ao detalhamento premium</h2>
+        </div>
+        <div class="cards-grid" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <section class="section plans-section" id="planos">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">PLANOS MENSAIS</span>
+          <h2>Para quem gosta do carro sempre impecável</h2>
+          <p>Planos recorrentes com prioridade, economia e benefícios exclusivos.</p>
+        </div>
+        <div class="plans-grid" id="plansGrid"></div>
+      </div>
+    </section>
+
+    <section class="section scheduler-section" id="agendar">
+      <div class="container scheduler-grid">
+        <div class="scheduler-copy reveal">
+          <span class="eyebrow">AGENDAMENTO</span>
+          <h2>Monte seu atendimento e envie direto para o WhatsApp</h2>
+          <p>O sistema prepara a mensagem com todas as informações. Você mantém o controle final da confirmação pelo WhatsApp.</p>
+          <ul class="feature-list">
+            <li>✓ Seleção de serviço ou plano</li>
+            <li>✓ Data e horário preferido</li>
+            <li>✓ Veículo, placa e observações</li>
+            <li>✓ Mensagem automática e organizada</li>
+          </ul>
+        </div>
+
+        <div class="booking-card reveal delay-1">
+          <div class="progress-wrap" aria-label="Progresso do agendamento">
+            <div class="progress-bar"><span id="progressBar"></span></div>
+            <div class="progress-label"><span id="progressStep">Etapa 1 de 4</span><span id="progressTitle">Escolha</span></div>
+          </div>
+
+          <form id="bookingForm" novalidate>
+            <section class="form-step active" data-step="1">
+              <h3>O que você quer agendar?</h3>
+              <div class="choice-tabs" role="tablist">
+                <button type="button" class="choice-tab active" data-kind="service">Serviço avulso</button>
+                <button type="button" class="choice-tab" data-kind="plan">Plano mensal</button>
+              </div>
+              <div class="choice-list" id="bookingChoices"></div>
+            </section>
+
+            <section class="form-step" data-step="2">
+              <h3>Quando você prefere?</h3>
+              <div class="form-grid two">
+                <label>Data
+                  <input type="date" id="bookingDate" required />
+                </label>
+                <label>Horário
+                  <select id="bookingTime" required>
+                    <option value="">Selecione</option>
+                  </select>
+                </label>
+              </div>
+              <div class="notice">O horário é uma preferência. A confirmação final é feita no WhatsApp.</div>
+            </section>
+
+            <section class="form-step" data-step="3">
+              <h3>Dados do veículo</h3>
+              <div class="form-grid two">
+                <label>Seu nome
+                  <input type="text" id="customerName" placeholder="Ex.: Pablo" required autocomplete="name" />
+                </label>
+                <label>WhatsApp
+                  <input type="tel" id="customerPhone" placeholder="(41) 99999-9999" required inputmode="tel" />
+                </label>
+                <label>Veículo
+                  <input type="text" id="vehicle" placeholder="Ex.: Chevrolet Onix" required />
+                </label>
+                <label>Placa
+                  <input type="text" id="plate" placeholder="ABC1D23" maxlength="7" required />
+                </label>
+              </div>
+              <label>Observações
+                <textarea id="notes" rows="4" placeholder="Ex.: sujeira interna intensa, pelos de pet, manchas, etc."></textarea>
+              </label>
+            </section>
+
+            <section class="form-step" data-step="4">
+              <h3>Revise antes de enviar</h3>
+              <div class="summary-card" id="bookingSummary"></div>
+              <label class="check-row">
+                <input type="checkbox" id="privacyConsent" required />
+                <span>Concordo em enviar estes dados pelo WhatsApp para solicitar o agendamento.</span>
+              </label>
+            </section>
+
+            <div class="form-actions">
+              <button type="button" class="btn btn-ghost" id="prevStep" disabled>Voltar</button>
+              <button type="button" class="btn btn-primary" id="nextStep">Continuar</button>
+              <button type="submit" class="btn btn-whatsapp hidden" id="submitBooking">Enviar para o WhatsApp</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">COMO FUNCIONA</span>
+          <h2>Sem complicação e sem perder tempo</h2>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card reveal"><span>01</span><h3>Escolha</h3><p>Selecione o serviço avulso ou plano mensal ideal para o seu carro.</p></article>
+          <article class="step-card reveal delay-1"><span>02</span><h3>Agende</h3><p>Informe a data, o horário e os dados do veículo.</p></article>
+          <article class="step-card reveal delay-2"><span>03</span><h3>Confirme</h3><p>O WhatsApp abre com a mensagem pronta. Basta enviar.</p></article>
+          <article class="step-card reveal delay-3"><span>04</span><h3>Pronto</h3><p>A equipe confirma a disponibilidade e combina os detalhes finais.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container faq-grid">
+        <div class="section-head reveal">
+          <span class="eyebrow">DÚVIDAS</span>
+          <h2>Perguntas frequentes</h2>
+        </div>
+        <div class="accordion" id="faqList"></div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container cta-strip-inner">
+        <div><span class="eyebrow">START MIL GRAU</span><h2>Seu próximo horário está a poucos cliques.</h2></div>
+        <a href="#agendar" class="btn btn-primary btn-lg">Agendar agora</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/logo.png" alt="Start Mil Grau" class="footer-logo" />
+        <p>Estética automotiva com atendimento organizado, rápido e personalizado.</p>
+      </div>
+      <div><strong>Atendimento</strong><p id="footerHours">Seg–Sáb • 08:00 às 18:00</p></div>
+      <div><strong>Contato</strong><p id="footerPhone">WhatsApp: configure no script.js</p></div>
+    </div>
+    <div class="container footer-bottom">© <span id="year"></span> Start Mil Grau. Todos os direitos reservados.</div>
+  </footer>
+
+  <a href="#agendar" class="floating-whatsapp" aria-label="Agendar pelo WhatsApp">WA</a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js" defer></script>
+</body>
+</html>
