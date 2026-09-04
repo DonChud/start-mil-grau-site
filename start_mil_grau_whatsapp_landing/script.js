@@ -13,7 +13,7 @@ const services = [
 ];
 
 const plans = [
-  { id:"essential", name:"Start Essencial", price:350.00, desc:"Sendo válido de segunda a sexta-feira, com horário agendado.", features:["2 lavagens /mês","5% em produtos adicionais","Prioridade básica"] },
+  { id:"essencial", name:"Start Essencial", price:350.00, desc:"Sendo válido de segunda a sexta-feira, com horário agendado.", features:["2 lavagens /mês","5% em produtos adicionais","Prioridade básica"] },
   { id:"plus", name:"Start Plus", price:580, desc:"Sendo válido de segunda a sexta-feira, com horário agendado.", features:["3 lavagens completas/mês","10% em adicionais","Prioridade de agenda"], featured:true },
   { id:"black", name:"Start Black", price:1000.00, desc:"Sendo válido de segunda a sexta-feira, com horário agendado.", features:["4 lavagens premium/mês","15% em adicionais","Prioridade máxima","Benefícios exclusivos"] }
 ];
