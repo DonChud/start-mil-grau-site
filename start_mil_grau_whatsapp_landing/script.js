@@ -22,7 +22,6 @@ const faqs = [
   ["O agendamento fica confirmado automaticamente?","Não. A landing page organiza seu pedido e abre o WhatsApp. A equipe confirma o horário após receber a mensagem."],
   ["Preciso criar conta?","Não. O fluxo foi pensado para ser rápido e direto, sem cadastro obrigatório."],
   ["Posso escolher um plano mensal?","Sim. Selecione a aba de planos no formulário e envie o pedido pelo WhatsApp para receber os detalhes."],
-  ["Como altero os serviços, preços e horários?","Abra o arquivo script.js e edite os arrays services, plans e o objeto CONFIG."],
   ["Funciona no celular?","Sim. O layout é totalmente responsivo e o botão final abre o WhatsApp com a mensagem pré-preenchida."]
 ];
 
